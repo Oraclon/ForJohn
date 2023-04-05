@@ -7,10 +7,16 @@
 <div class="container-fluid MainFooter">
     
     <div class="SubscribeArea">
-        <div class="SubscribeText">Wanna hear more from us?</div>
-        <form class="FormFlex">
-            <input type="text" >
-            <button class="SubscribeButton">Subscribe</button>
+        <div class="SubscribeText">
+            {{ !subscribeComplete ? 'Wanna hear more from us?' : subscribeComplete }}
+        </div>
+        <form class="FormFlex" 
+            [formGroup]="subscribeForm" 
+            (ngSubmit)="onSubscribe()">
+            <input type="text" formControlName="subscribeEmail">
+            <button 
+            [disabled]="!subscribeForm.valid"
+            class="SubscribeButton" type="submit">Subscribe</button>
         </form>
     </div>
     <div class="FooterArea">

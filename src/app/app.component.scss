@@ -1,5 +1,6 @@
 $mainYellow: #ff9a00;
 $softBlue: #0097ff;
+$mainRed: #d00;
 
 .FormFlex{
   display: flex;
@@ -52,6 +53,10 @@ $softBlue: #0097ff;
         border-top-right-radius:6px;
         border-bottom-right-radius:6px;
         padding: 10px;
+        
+        &:disabled{
+          background: $mainRed;
+        }
       }
     }
   }

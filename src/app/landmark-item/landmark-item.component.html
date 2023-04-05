@@ -4,12 +4,15 @@
         <button class="ModalClose" (click)="HandleModal()">x</button>
     </div>
     <div>
-        <img [src]="LandmarkData.photo" appKeypressed>
+        <img 
+        style="cursor: pointer;"
+        [src]="LandmarkData.photo" appKeypressed>
     </div>
 </div>
 
 <div class="TabBody">
     <img 
+    style="cursor: pointer;"
     [src]="LandmarkData.photo"
     (click)="HandleModal()">
     <div class="TabStructure">

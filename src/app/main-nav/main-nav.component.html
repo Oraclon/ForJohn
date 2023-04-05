@@ -28,33 +28,45 @@
     </div>
   </div>
   <div>
+
     <button 
     *ngIf="!UserIsLogged"
     class="LoginButton"
     (click)="ControlUserMenu('admin')">Login</button>
     <img 
     *ngIf="UserIsLogged"
-    (click)="ControlUserMenu('')"
+    (click)="ControlUserMenu('admin')"
     class="LoggedUser" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRQhhmqGHFLtdXNlBGaNdLklxI9J2BEIgxavzedgja&s">
     
-    <div *ngIf="UserIsLogged" appUserMenu class="LoggedUserMenu"
-      [ngClass]="LoggedUserMenuIsActive ? 'OpenUserMenuAnimation':''">
-      <div class="welcome">Welcome back User: Admin</div>
-      <button class="LoginPage"
-      (click)="ControlUserMenu('admin')"> 
-      Admin Page </button>
-      <button 
-      (click)="ControlUserMenu('logout')"
-      class="UserLogout"> Logout </button>
-    </div>
+
   </div>
   </nav>
+
+  <div class="sideMenu" *ngIf="UserIsLogged">
+    <div class="editButton"
+    (click)="ControlUserMenu('admin')">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16">
+        <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+      </svg>    
+    </div>
+    <div class="editButton logout"
+    (click)="ControlUserMenu('logout')">
+      <svg xmlns="http://www.w3.org/2000/svg"  width="100%" height="100%" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+        <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+      </svg> 
+    </div>
+  </div>
 
   <!-- Responsive Menu -->
   <div class="ResponsiveHandlers">
     <div class="MainStyle ResponsiveMenuArea"
     [ngClass]="ResponsiveMenuAreaStatus ? 'openResMenu':'closeResMenu' ">
-      <div class="close" (click)="HandleResponsiveMenu()">x</div>
+      <div class="close" (click)="HandleResponsiveMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16">
+          <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+        </svg>
+      </div>
 
       <div class="NavItems">
         <div *ngIf="UserIsLogged" class="UserArea">
@@ -118,16 +130,32 @@
 
           </div>
         </div>
-      <div class="close" (click)="HandleResponsiveSearch()">x</div>
+      <div class="close" (click)="HandleResponsiveSearch()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16">
+          <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+        </svg>
+      </div>
     </div>
     <!-- Responsive Search -->
     
   </div>
 
-  <div class="ResponsiveButtons">
+  <div class="BottomMenu">
+    <div class="editButton" (click)="HandleResponsiveMenu()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16">
+        <path d="M7.646 15.854a.5.5 0 0 0 .708 0L10.207 14H14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3.793l1.853 1.854zM1 9V6h14v3H1zm14 1v2a1 1 0 0 1-1 1h-3.793a1 1 0 0 0-.707.293l-1.5 1.5-1.5-1.5A1 1 0 0 0 5.793 13H2a1 1 0 0 1-1-1v-2h14zm0-5H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v2zM2 11.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 0-1h-8a.5.5 0 0 0-.5.5zm0-4a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11a.5.5 0 0 0-.5.5zm0-4a.5.5 0 0 0 .5.5h6a.5.5 0 0 0 0-1h-6a.5.5 0 0 0-.5.5z"/>
+      </svg>
+    </div>
+    <div class="editButton" (click)="HandleResponsiveSearch()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16">
+        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+      </svg>
+    </div>
+  </div>
+  <!-- <div class="ResponsiveButtons">
     <div class="MainResponsiveButton"
     (click)="HandleResponsiveMenu()">Menu</div>
     <div class="MainResponsiveButton"
     (click)="HandleResponsiveSearch()">Search</div>
-  </div>
+  </div> -->
   

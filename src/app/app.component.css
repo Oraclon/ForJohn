@@ -44,6 +44,9 @@
   border-bottom-right-radius: 6px;
   padding: 10px;
 }
+.MainFooter .SubscribeArea .FormFlex .SubscribeButton:disabled {
+  background: #d00;
+}
 .MainFooter .FooterArea {
   background: rgb(21, 21, 21);
   color: white;

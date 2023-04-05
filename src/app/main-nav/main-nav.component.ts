@@ -80,9 +80,11 @@ export class MainNavComponent implements OnInit{
   }
 
   HandleResponsiveMenu(){
+    this.ResponsiveSearchAreaStatus = false;
     this.ResponsiveMenuAreaStatus = !this.ResponsiveMenuAreaStatus;
   }
   HandleResponsiveSearch(){
+    this.ResponsiveMenuAreaStatus = false;
     this.ResponsiveSearchAreaStatus = !this.ResponsiveSearchAreaStatus;
   }
 }
