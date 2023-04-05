@@ -1,0 +1,8 @@
+<div class="LandmarksPageHeader" *ngIf="TitleIsEnabled">
+    Explore Dubai's Landmarks.
+</div>
+<div class="container-fluid main-flex" style="padding-bottom: 10px;">
+    <div class=" col-md-4 col-xs-12 ArticleTab" *ngFor="let Landmark of landmarkItems">
+        <app-landmark-item [LandmarkData]="Landmark"></app-landmark-item>
+    </div>
+</div>

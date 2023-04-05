@@ -1,0 +1,29 @@
+<div class="container-fluid p-0" style="overflow: hidden;">
+    <div class="row"> 
+      <div class="col-md-6 d-none d-sm-block form-image colsHeight">
+      <div class="form-image-mask"></div>
+    </div>
+    <div class=" col-xs-12 col-md-6  colsHeight d-flex align-items-center justify-content-center">
+      <div style="width: 500px; height: 600px; position: relative;" 
+      class="form form-shadow d-flex flex-column align-items-center justify-content-center">
+          <div class="userImage"></div>
+          <h4 class="mt-4 mb-4">Welcome back traveller.</h4>
+          <form class="col-sm-6" (ngSubmit)="onSubmit()" [formGroup]="LoginForm">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input  formControlName="username" id="usename" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input  formControlName="password" id="password" type="password" class="form-control">
+            </div>
+            <div class="">
+              <button class="btn col-sm-12 col-md-12 mt-2" type="submit"
+              [disabled]="!LoginForm.valid">Login</button>
+            </div>
+            <div *ngIf="ErrorMessage" class="alert alert-danger mt-3">{{ ErrorMessage }}</div>
+          </form>
+    </div>
+    </div>
+    </div>
+  </div>

@@ -1,0 +1,34 @@
+.main-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 592px) {
+  .container-fluid {
+    padding: 10px;
+  }
+  .ArticleTab {
+    padding: 0;
+  }
+}
+@media (min-width: 2000px) {
+  .container-fluid {
+    padding: 0;
+  }
+  .main-flex {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+  }
+}
+.LandmarksPageHeader {
+  text-align: center;
+  font-size: 30px;
+  padding: 60px 20px;
+  display: block;
+  box-sizing: border-box;
+}
+
+.ArticleTab {
+  padding: 5px;
+}/*# sourceMappingURL=landmarks-page.component.css.map */

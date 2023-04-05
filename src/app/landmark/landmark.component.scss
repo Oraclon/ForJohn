@@ -1,0 +1,101 @@
+$mainYellow: #ff9a00;
+
+
+
+.mainShadow{
+    box-shadow: 1px 1px 4px rgba(21,21,21,.4);
+}
+
+.container-fluid{ padding: 0; } 
+
+.LandmarkPage{
+    display: flex;
+    justify-content: stretch;
+    padding: 20px 10px;
+
+    .LandmarkFullArea{
+
+        .LandmarkFullImage{
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: calc(70vh - 120px);
+            border-top-right-radius: 12px;
+            border-top-left-radius: 12px;
+            overflow: hidden;
+            
+
+            img{
+                width: 100%; height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+
+            .SlideMask{
+                background: hsla(0, 0%, 0%, 0.5);
+                position: absolute;
+                bottom: 0; top: 0;
+                right: 0; left: 0;
+                width: 100%; height: 100%;
+                overflow: hidden;
+            }
+            
+        }
+
+        .LandmarkInfoBar{
+            padding: 15px;
+            background: $mainYellow;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .LandmarkTitle{
+                font-size: 20px;
+                font-weight: 700;
+                color: white;
+            }
+
+            .LandmarkButtons{
+                display: flex;
+                gap: 10px;
+
+                .MainButton{
+                    padding: 10px 20px;
+                    background: white;
+                    color: $mainYellow;
+                    border: none;
+                    cursor: pointer;
+                    border-radius: 6px;
+                }
+            }
+        }
+
+        .LandmarkDescription{
+            padding: 40px 0 60px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        // img{
+        //     height: calc(70% - 120px);
+        //     width: 100%;
+        //     object-fit: cover;
+        // }
+    }
+}
+
+@media (max-width: 592px)
+{
+    .SideLandmarks{
+        display: none;
+    }
+
+    .LandmarkPage .LandmarkFullArea .LandmarkInfoBar{
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+}

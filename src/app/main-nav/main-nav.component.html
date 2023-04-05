@@ -1,0 +1,133 @@
+<nav class="MainNav">
+  <div class="LogoAndNavigation">
+    <div class="ProjectLogo">#myDubai</div>
+    <div class="ProjectNavigation">
+      <li class="NavigationButton"
+      routerLink="/home"
+      routerLinkActive="active">Home</li>
+      <li class="NavigationButton"
+      routerLink="/landmarks"
+      routerLinkActive="active">Landmarks</li>
+    </div>
+  </div>
+  <div class="NavSearchBar">
+    <input type="text" class="SearchInput"
+      placeholder="Search for landmarks..."
+      [(ngModel)]="searchText">
+
+      <div class="SearchResults" 
+      [ngClass]="searchText ? 'SearchAnimationOpen':'' ">
+      
+      <div class="SearchResult" *ngFor="let landmark of myItems | navSearchPipe: searchText"
+        (click)="RedirectToLandmark(landmark)">
+        <img [src]="landmark.photo">
+        <div class="SlideMask">{{ landmark.title }}</div>
+      </div>
+
+      
+    </div>
+  </div>
+  <div>
+    <button 
+    *ngIf="!UserIsLogged"
+    class="LoginButton"
+    (click)="ControlUserMenu('admin')">Login</button>
+    <img 
+    *ngIf="UserIsLogged"
+    (click)="ControlUserMenu('')"
+    class="LoggedUser" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRQhhmqGHFLtdXNlBGaNdLklxI9J2BEIgxavzedgja&s">
+    
+    <div *ngIf="UserIsLogged" appUserMenu class="LoggedUserMenu"
+      [ngClass]="LoggedUserMenuIsActive ? 'OpenUserMenuAnimation':''">
+      <div class="welcome">Welcome back User: Admin</div>
+      <button class="LoginPage"
+      (click)="ControlUserMenu('admin')"> 
+      Admin Page </button>
+      <button 
+      (click)="ControlUserMenu('logout')"
+      class="UserLogout"> Logout </button>
+    </div>
+  </div>
+  </nav>
+
+  <!-- Responsive Menu -->
+  <div class="ResponsiveHandlers">
+    <div class="MainStyle ResponsiveMenuArea"
+    [ngClass]="ResponsiveMenuAreaStatus ? 'openResMenu':'closeResMenu' ">
+      <div class="close" (click)="HandleResponsiveMenu()">x</div>
+
+      <div class="NavItems">
+        <div *ngIf="UserIsLogged" class="UserArea">
+          <img src="https://m.media-amazon.com/images/M/MV5BNGJmMWEzOGQtMWZkNS00MGNiLTk5NGEtYzg1YzAyZTgzZTZmXkEyXkFqcGdeQXVyMTE1MTYxNDAw._V1_.jpg" alt="">
+          <div class="welcomeUser">
+            Welcome Back 
+          <span style="text-decoration: underline;">Admin</span></div>
+        </div>
+
+        <button class="mainButton"
+        routerLink="/home"
+        routerLinkActive="activeButton"
+        (click)="HandleResponsiveMenu()">Home</button>
+
+        <button class="mainButton"
+        routerLink="/landmarks"
+        routerLinkActive="activeButton"
+        (click)="HandleResponsiveMenu()">Landmarks</button>
+
+        <button
+        *ngIf="!UserIsLogged"
+        routerLink="/auth"
+        routerLinkActive="activeButton"
+        (click)="HandleResponsiveMenu()"
+        class="mainButton">Login</button>
+
+        <button
+        *ngIf="UserIsLogged"
+        routerLink="/adminPage"
+        routerLinkActive="activeButton"
+        (click)="HandleResponsiveMenu()"
+        class="mainButton">Admin Page</button>
+
+        <button
+        *ngIf="UserIsLogged"
+        (click)="ControlUserMenu('logout')"
+        class="mainButton logout">Logout</button>
+      </div>
+    </div>
+    <!-- Responsive Menu -->
+
+    <!-- Responsive Search -->
+    <div class="MainStyle ResponsiveSearchArea"
+    [ngClass]="ResponsiveSearchAreaStatus ? 'openSearchArea':'closeSearchArea'">
+        <div class="searchArea">
+          <div class="searchMessage">Search for a <span style="text-decoration: underline;">Landmark</span></div>
+          <input type="text" class="searchInput mainShadow" placeholder="Landmark name (e.x Burj)" [(ngModel)]="searchText">
+          
+          
+          <div *ngIf="searchText" class="searchResults">
+            
+            <div class="searchResult mainShadow" *ngFor="let landmark of myItems | navSearchPipe: searchText"
+            (click)="RedirectToLandmark(landmark)">
+              
+              <img [src]="landmark.photo" (click)="RedirectToLandmark(landmark)">
+              <div class="ResultMask">
+                <div class="title">{{ landmark.title }}</div>
+              </div>
+            </div>
+            
+
+          </div>
+        </div>
+      <div class="close" (click)="HandleResponsiveSearch()">x</div>
+    </div>
+    <!-- Responsive Search -->
+    
+  </div>
+
+  <div class="ResponsiveButtons">
+    <div class="MainResponsiveButton"
+    (click)="HandleResponsiveMenu()">Menu</div>
+    <div class="MainResponsiveButton"
+    (click)="HandleResponsiveSearch()">Search</div>
+  </div>
+  

@@ -1,0 +1,10 @@
+.image {
+  background-size: cover;
+  background-position: center;
+}
+
+@media (min-width: 2000px) {
+  .container-fluid {
+    height: 100vh;
+  }
+}/*# sourceMappingURL=admin-page.component.css.map */

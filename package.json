@@ -1,9 +1,9 @@
 {
-  "name": "about-john",
+  "name": "nas-assignment-final",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "concurrently \"ng serve\" \"node ./scripts/createServer.js\"  \"ts-node ./scripts/readDotEnv\"",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -18,8 +18,17 @@
     "@angular/platform-browser": "^15.2.0",
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
+    "bootstrap": "^4.6.2",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongodb-runner": "^4.10.0",
+    "ngx-cookie-service": "^15.0.0",
+    "parse-dashboard": "^5.0.0",
+    "parse-server": "^6.0.0",
     "rxjs": "~7.8.0",
+    "ts-node": "^10.9.1",
     "tslib": "^2.3.0",
+    "yargs": "^17.7.1",
     "zone.js": "~0.12.0"
   },
   "devDependencies": {
@@ -27,6 +36,7 @@
     "@angular/cli": "~15.2.1",
     "@angular/compiler-cli": "^15.2.0",
     "@types/jasmine": "~4.3.0",
+    "concurrently": "^7.6.0",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",

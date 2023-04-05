@@ -1,0 +1,49 @@
+<div class="LandmarksSlider">
+    <div class="SliderNavigation">
+        <i class="arrow left" style="padding: 10px;" (click)="onPreviousClick()"></i>
+        <i class="arrow right" style="padding: 10px;" (click)="onNextClick()"></i>
+    </div>
+    <div class="LandmarkSlide">
+        <ng-container *ngFor="let slide of carouselSlides; let i = index">
+        <div class="LandmarkSlideImage" *ngIf="i === currentSlide">
+            <img
+                
+                [src]="slide.photo"
+                @carouselAnimation
+            />
+            <div class="SlideMask"></div>
+          </div>
+
+        <div class="SlideInfo" *ngIf="i === currentSlide">
+            <div class="SlideTitle">{{slide.title}}</div>
+            <div class="SlideHashtag">#{{ slide.hashTag.replace(' ','').split(' ').join('') }}</div>
+            <div class="SlideReadMore"
+            (click)="RedirectToLandmark()">Read More</div>
+        </div>
+    </ng-container>
+    </div>
+</div>
+<!-- 
+<div class="LandmarksSlider">
+    <div class="SliderNavigation">
+        <i class="arrow left"></i>
+        <i class="arrow right"></i>
+    </div>
+    <ng-container *ngFor="let slide of carouselSlides; let i = index" class="LandmarkSlide">
+        <div class="LandmarkSlideImage">
+      <img
+        *ngIf="i === currentSlide"
+        [src]="slide.photo"
+        @carouselAnimation
+      />
+      <div class="SlideMask"></div>
+    </div>
+
+      <div class="SlideInfo">
+        <div class="SlideTitle">{{ slide.title }}</div>
+        <div class="SlideHashtag">#ThisIsHashtag</div>
+        <div class="SlideReadMore">Read More</div>
+    </div>
+      
+    </ng-container>
+</div> -->

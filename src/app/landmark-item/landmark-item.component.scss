@@ -1,0 +1,154 @@
+
+$mainYellow: #ff9a00;
+$softBlue: #0097ff;
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: $mainYellow; 
+  }
+
+.main-flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ModalBody{
+    position: fixed;
+    top: 0; bottom: 0;
+    right: 0; left: 0;
+    background: white;
+    z-index: 999;
+    
+    .ModalControls{
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .ModalLandmarkTitle{
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .ModalClose{
+            width: 40px; height: 40px;
+            border: none;
+            border-radius: 6px;
+            background: $mainYellow;
+            color: white;
+            font-weight: 700;
+        }
+    }
+
+    img{
+        object-fit: cover;
+        width: 100%; height: calc(100vh - 70px);
+        z-index: 1;
+    }
+}
+
+
+.TabBody{
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 1px 1px 4px rgba(21,21,21,.4);
+
+    img{
+        height: 200px; width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .TabStructure{
+        padding: 20px 20px 10px 20px;
+
+        .TabHashtag{
+            font-size: 12px;
+            color: $mainYellow;
+            font-weight: 700;
+        }
+
+        .TabTitle{
+            font-size: 20px;
+            font-weight: 700;
+            padding: 5px 0;
+
+            &::after{
+                background: red;
+            }
+        }
+
+        .TabShortInfo{
+            font-size: 12px;
+            height: 120px;
+            overflow-y: auto;
+            text-align: justify;
+            // padding-right: 15px;
+            color: rgba(21,21,21,.4);
+            transition: color .4s ease;
+
+            &:hover{
+                transition: color .4s ease;
+                color: rgba(21,21,21,.8);
+            }
+        }
+
+        .TabReadMore{
+            margin-top: 10px;
+            padding: 10px 5px;
+            border-radius: 6px;
+            background: $mainYellow;
+            border: none;
+            color: white;
+        }
+
+        .TabButtons{
+            display: flex;
+            gap: 10px;
+            padding: 10px 0;
+            
+
+            button{
+                padding: 10px;
+                color: white;
+                border: none;
+                background: $mainYellow;
+                border-radius: 6px;
+                cursor: pointer;
+                box-shadow: 1px 1px 6px rgba(21,21,21,.2);
+            }
+
+            .ReadMore{
+                width: 100%;
+            }
+
+            .Edit{
+                width: 100px;
+                background: $softBlue
+            }
+        }
+    }
+}
+
+@media (max-width: 592px)
+{
+    
+}

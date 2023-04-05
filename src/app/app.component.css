@@ -1,0 +1,67 @@
+.FormFlex {
+  display: flex;
+}
+
+.MainFooter {
+  position: relative;
+  background: transparent;
+}
+.MainFooter .SubscribeArea {
+  background: #ff9a00;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px;
+  gap: 6px;
+}
+.MainFooter .SubscribeArea .SubscribeText {
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+}
+.MainFooter .SubscribeArea .FormFlex {
+  display: flex;
+  max-width: 600px;
+  width: 100%;
+}
+.MainFooter .SubscribeArea .FormFlex input {
+  border: none;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  padding: 10px;
+  width: 100%;
+}
+.MainFooter .SubscribeArea .FormFlex .SubscribeButton {
+  border: none;
+  background: #0097ff;
+  color: white;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  padding: 10px;
+}
+.MainFooter .FooterArea {
+  background: rgb(21, 21, 21);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  padding: 20px;
+}
+@media (max-width: 592px) {
+  .MainFooter .SubscribeArea {
+    padding: 20px;
+    background: #ff9a00;
+  }
+  .MainFooter .SubscribeArea .SubscribeText {
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+  }
+}/*# sourceMappingURL=app.component.css.map */

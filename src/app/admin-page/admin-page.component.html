@@ -1,0 +1,104 @@
+<div class="container-fluid overflow-hidden"> 
+    
+    <div class="row" style="height: auto;">
+        <div class="col-sm-12 col-md-4" style="min-height: 300px; padding: 10px; max-height: 650px; overflow: auto;">
+            <div class="card" 
+            *ngFor="let landmark of LandmarkItems"
+            (click)="onSelect(landmark)"
+            style="margin-bottom: 10px;" >
+                <div class="card-body d-flex gap-3 align-items-center">
+                    <img [src]="landmark.photo"
+                        alt="" class="img-responsive img-circle" style="width: 70px; height: 70px; background-position: center; border-radius: 50%; overflow:hidden;">
+                    <div>
+                        <div>{{ landmark.title }}</div>
+                        <hr>
+                        <div style="font-size: 12px;">Edit Landmark</div>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+        <div class="col-xs-12 col-md-8 d-flex align-items-center justify-content-center" style="min-height: 700px;">
+            <div *ngIf="!formStructure.valid" class="text-center">
+                Please Select a landmark from the list on the left<br/>
+                in order for you to be able to edit it.
+
+                <div class="alert alert-success"
+                *ngIf="responseModel.status == 200">
+                   Landmark: <strong>{{ responseModel.message }}</strong>
+                   has been sucessfully updated.
+                </div>
+                <div class="alert alert-danger"
+                *ngIf="(responseModel.status > 0 && responseModel.status != 200)">
+                  {{ responseModel.message }}
+                </div>
+
+
+            </div>
+            <div *ngIf="formStructure.valid" class="col-xs-12 col-md-7 form-area-style">
+                
+                
+
+                <form (ngSubmit)="onUpdate()" [formGroup]="formStructure" >
+                    
+                    <div class="form-group">
+                        <label for="title">
+                            Landmark Title
+                        </label>
+                        <input 
+                        formControlName = 'title'
+                        id="title" type="text" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="short_info">
+                            Landmark Short Description
+                        </label>
+                        <textarea 
+                        formControlName = 'short_info'
+                        id="short_info" rows="2" type="text" class="form-control">
+                        </textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">
+                            Landmark Description
+                        </label>
+                        <textarea 
+                        formControlName = 'description'
+                        id="description" rows="4" type="text" class="form-control">
+                        </textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="photo">
+                            Image Url
+                        </label>
+                        <input 
+                        formControlName = 'photo'
+                        id="photo" type="text" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="url">
+                            Landmark External Url
+                        </label>
+                        <input 
+                        formControlName = 'url'
+                        id="url" type="text" class="form-control">
+                    </div>
+                    <div class="container mt-3">
+                        <div class="row">
+                            <button 
+                            [disabled]="!formStructure.valid"
+                            class="btn btn-success col-md-12" type="submit">
+                                {{ !formStructure.valid ? 'Select a Landmark To Edit' : 'Save Changes' }}
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

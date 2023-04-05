@@ -1,0 +1,34 @@
+<div class="LandmarkPage container-fluid">
+    <div class="col-sm-3 SideLandmarks" style="height: 110vh; overflow-y: auto;">
+        <div style="padding: 10px; text-align: center; width: 100%; font-size: 20px; font-weight: 700;
+        text-decoration: underline  ;">
+            See Also
+        </div>
+        <div class=" col-md-12 ArticleTab" style="padding: 0 0 10px 0;" *ngFor="let landmark of SideLandmarks">
+            <app-landmark-item [LandmarkData]="landmark"></app-landmark-item>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-9 LandmarkFullArea">
+        <div class="LandmarkFullImage mainShadow">
+            <img [src]="LandmarkData.photo" >
+            <div class="SlideMask"></div>
+        </div>
+        <div class="LandmarkInfoBar mainShadow">
+            <div class="LandmarkTitle">{{ LandmarkData.title }}</div>
+            <div class="LandmarkButtons">
+                <!-- <button class="MainButton mainShadow">View on Map</button> -->
+                <a class="MainButton mainShadow"
+                [href]="LandmarkData.url">Visit Site</a>
+            </div>
+        </div>
+
+        <div class="LandmarkDescription">
+            <div class="LandmarkShortDescription">
+                {{ LandmarkData.short_info }}
+            </div>
+            <div class="LandmarkMainDescription">
+                {{ LandmarkData.description }}
+            </div>
+        </div>
+    </div>
+</div>

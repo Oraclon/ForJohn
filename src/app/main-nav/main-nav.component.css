@@ -1,0 +1,400 @@
+@keyframes SearchAreaAnimationOpen {
+  from {
+    top: -600px;
+  }
+  to {
+    top: 40px;
+  }
+}
+.mainShadow {
+  box-shadow: 1px 1px 4px rgba(21, 21, 21, 0.4);
+}
+
+.ResponsiveButtons {
+  display: none;
+}
+
+.ResponsiveHandlers {
+  display: none;
+}
+
+.SearchAnimationOpen {
+  animation: SearchAreaAnimationOpen 0.5s forwards;
+}
+
+@keyframes UserMenuAreaAnimation {
+  from {
+    right: -400px;
+  }
+  to {
+    right: 0;
+  }
+}
+.OpenUserMenuAnimation {
+  animation: UserMenuAreaAnimation 0.5s forwards;
+}
+
+.MainNav {
+  position: relative;
+  background: #ff9a00;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 10px;
+  z-index: 11;
+}
+.MainNav .LogoAndNavigation {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.MainNav .LogoAndNavigation .ProjectLogo {
+  font-size: 20px;
+  font-weight: 700;
+}
+.MainNav .LogoAndNavigation .active {
+  background: white;
+  box-shadow: 1px 1px 4px rgba(21, 21, 21, 0.4);
+}
+.MainNav .LogoAndNavigation li {
+  display: inline;
+  border-radius: 6px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.MainNav .NavSearchBar {
+  position: relative;
+  width: 700px;
+}
+.MainNav .NavSearchBar .SearchInput {
+  position: relative;
+  border-radius: 6px;
+  border: none;
+  width: 100%;
+  padding: 8px;
+  z-index: 11;
+}
+.MainNav .NavSearchBar .SearchResults {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+  top: -600px;
+  background: #ff9a00;
+  z-index: 10;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  box-shadow: 1px 1px 4px rgba(21, 21, 21, 0.4);
+}
+.MainNav .NavSearchBar .SearchResults .SearchResult {
+  position: relative;
+  z-index: 2;
+  min-width: 300px;
+  width: 300px !important;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 1px 1px 4px rgba(21, 21, 21, 0.4);
+}
+.MainNav .NavSearchBar .SearchResults .SearchResult img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.MainNav .NavSearchBar .SearchResults .SearchResult .SlideMask {
+  background: hsla(0, 0%, 0%, 0.4);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: white;
+  display: flex;
+  padding: 10px;
+  justify-content: start;
+  align-items: end;
+}
+.MainNav .LoginButton {
+  background: white;
+  color: #ff9a00;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 1px 1px 4px rgba(21, 21, 21, 0.4);
+}
+.MainNav .LoggedUser {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: red;
+  cursor: pointer;
+  -o-object-fit: cover;
+     object-fit: cover;
+  box-shadow: 1px 1px 4px rgba(21, 21, 21, 0.4);
+}
+.MainNav .LoggedUserMenu {
+  position: fixed;
+  width: auto;
+  background: white;
+  top: 70px;
+  right: -400px;
+  box-shadow: 0px 2px 8px rgba(21, 21, 21, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 40px;
+  text-align: center;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.MainNav .LoggedUserMenu img {
+  width: 100%;
+  height: 100%;
+}
+.MainNav .LoggedUserMenu .welcome {
+  font-size: 16px;
+}
+.MainNav .LoggedUserMenu .LoginPage {
+  color: #ff9a00;
+  border: none;
+  background: white;
+  padding: 10px;
+  box-shadow: 1px 1px 4px rgba(21, 21, 21, 0.4);
+  border-radius: 6px;
+}
+.MainNav .LoggedUserMenu .UserLogout {
+  color: white;
+  border: none;
+  background: #ff9a00;
+  padding: 10px;
+  box-shadow: 1px 1px 4px rgba(21, 21, 21, 0.4);
+  border-radius: 6px;
+}
+
+@keyframes AnimResMenOpen {
+  from {
+    right: -100vw;
+  }
+  to {
+    right: 0;
+  }
+}
+@keyframes AnimResMenClose {
+  to {
+    right: -100vw;
+  }
+  from {
+    right: 0;
+  }
+}
+@keyframes AnimSearch {
+  from {
+    left: -100vw;
+  }
+  to {
+    left: 0;
+  }
+}
+@keyframes AnimLogin {
+  from {
+    bottom: -100vh;
+  }
+  to {
+    bottom: 0;
+  }
+}
+@media (max-width: 560px) {
+  .MainNav {
+    display: none;
+  }
+  .ResponsiveButtons {
+    position: fixed;
+    width: 100%;
+    bottom: 30px;
+    display: flex;
+    justify-content: center;
+    z-index: 99;
+    gap: 6px;
+  }
+  .ResponsiveButtons .MainResponsiveButton {
+    background: #ff9a00;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    fill: white;
+  }
+  .openResMenu {
+    display: block;
+    animation: AnimResMenOpen 0.5s forwards;
+  }
+  .closeResMenu {
+    animation: AnimResMenClose 0.5s forwards;
+    display: none;
+  }
+  .openSearchArea {
+    display: block;
+    animation: AnimSearch 0.5s forwards;
+  }
+  .closeSearchArea {
+    left: -100vw;
+    display: none;
+  }
+  .ResponsiveHandlers {
+    display: block;
+  }
+  .ResponsiveHandlers .close {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .ResponsiveHandlers .MainStyle {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #ff9a00;
+    z-index: 999;
+    overflow: hidden;
+  }
+  .ResponsiveHandlers .ResponsiveMenuArea {
+    background: #ff9a00;
+    right: -100vw;
+    height: 100vh;
+  }
+  .ResponsiveHandlers .ResponsiveMenuArea .NavItems {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    padding: 60px;
+    gap: 10px;
+  }
+  .ResponsiveHandlers .ResponsiveMenuArea .NavItems .UserArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .ResponsiveHandlers .ResponsiveMenuArea .NavItems .UserArea img {
+    width: 100px;
+    height: 100px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border: 2px solid white;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .ResponsiveHandlers .ResponsiveMenuArea .NavItems .UserArea .welcomeUser {
+    font-size: 20px;
+    color: white;
+    font-weight: 700;
+  }
+  .ResponsiveHandlers .ResponsiveMenuArea .NavItems .mainButton {
+    padding: 10px 20px;
+    background: #ff9a00;
+    border: none;
+    color: white;
+    font-weight: 700;
+    box-shadow: 1px 1px 4px rgba(21, 21, 21, 0.4);
+    border-radius: 6px;
+  }
+  .ResponsiveHandlers .ResponsiveMenuArea .NavItems .activeButton {
+    color: #ff9a00;
+    background: white;
+  }
+  .ResponsiveHandlers .ResponsiveMenuArea .NavItems .logout {
+    background: #ff1800;
+    color: white;
+  }
+  .ResponsiveHandlers .ResponsiveSearchArea {
+    background: #ff9a00;
+    left: -100vw;
+    height: 100vh;
+  }
+  .ResponsiveHandlers .ResponsiveSearchArea .searchArea {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: stretch;
+    padding: 80px 40px;
+    gap: 10px;
+    color: white;
+  }
+  .ResponsiveHandlers .ResponsiveSearchArea .searchArea .searchMessage {
+    font-size: 22px;
+    font-weight: 700;
+  }
+  .ResponsiveHandlers .ResponsiveSearchArea .searchArea input {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    width: 100%;
+  }
+  .ResponsiveHandlers .ResponsiveSearchArea .searchArea .searchResults {
+    margin-top: 20px;
+    height: 100%;
+    overflow-y: auto;
+  }
+  .ResponsiveHandlers .ResponsiveSearchArea .searchArea .searchResults .searchResult {
+    position: relative;
+    z-index: 2;
+    width: 80vw;
+    height: 180px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .ResponsiveHandlers .ResponsiveSearchArea .searchArea .searchResults .searchResult img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+  }
+  .ResponsiveHandlers .ResponsiveSearchArea .searchArea .searchResults .searchResult .ResultMask {
+    background: hsla(0, 0%, 0%, 0.4);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 20px;
+  }
+  .ResponsiveHandlers .ResponsiveSearchArea .searchArea .searchResults .searchResult .ResultMask .title {
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+  }
+}/*# sourceMappingURL=main-nav.component.css.map */

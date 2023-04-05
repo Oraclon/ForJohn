@@ -1,0 +1,43 @@
+.red {
+  background: Red;
+}
+
+.yellow {
+  background: yellow;
+}
+
+.colsHeight {
+  height: 700px;
+}
+
+.form-image {
+  position: relative;
+  background-image: url("https://wallpaperaccess.com/full/222675.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.form-image .form-image-mask {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(21, 21, 21, 0.4);
+}
+
+.form {
+  position: relative;
+  box-shadow: 1px 1px 8px rgba(21, 21, 21, 0.4);
+  border-radius: 12px;
+}
+.form .userImage {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-image: url("https://m.media-amazon.com/images/M/MV5BNGJmMWEzOGQtMWZkNS00MGNiLTk5NGEtYzg1YzAyZTgzZTZmXkEyXkFqcGdeQXVyMTE1MTYxNDAw._V1_.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.form button {
+  background: #dd2a5b;
+  color: white;
+}/*# sourceMappingURL=auth.component.css.map */

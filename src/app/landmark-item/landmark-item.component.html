@@ -1,0 +1,30 @@
+<div class="ModalBody" *ngIf="ModalIsOpen">
+    <div class="ModalControls" >
+        <div class="ModalLandmarkTitle">{{ this.LandmarkData.title }}</div>
+        <button class="ModalClose" (click)="HandleModal()">x</button>
+    </div>
+    <div>
+        <img [src]="LandmarkData.photo" appKeypressed>
+    </div>
+</div>
+
+<div class="TabBody">
+    <img 
+    [src]="LandmarkData.photo"
+    (click)="HandleModal()">
+    <div class="TabStructure">
+        <div class="TabHashtag">#{{ LandmarkData.hashTag.replace(' ','').split(' ').join('') }}</div>
+        <div class="TabTitle">{{ LandmarkData.title }}</div>
+        <div class="TabShortInfo">
+            {{ LandmarkData.short_info }}
+        </div>
+        <div class="TabButtons">
+            <button class="ReadMore"
+            (click)="RedirectToLandmark()">Read More</button>
+            <button 
+            (click)="EditLandmark()"
+            *ngIf="UserIsLogged"
+            class="Edit">Edit</button>
+        </div>
+    </div>
+</div>

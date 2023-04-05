@@ -1,0 +1,91 @@
+$mainYellow: #ff9a00;
+$softBlue: #0097ff;
+
+.FormFlex{
+  display: flex;
+}
+
+.MainFooter{
+//   padding: 10px;
+  position: relative;
+  // box-shadow: 1px 1px 4px rgba(21,21,21,.4);
+  background: transparent;
+
+  .SubscribeArea{
+
+    background: $mainYellow;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px;
+    gap: 6px;
+
+    .SubscribeText{
+      color: white;
+      font-size: 30px;
+      font-weight: 700;
+    }
+
+    .FormFlex{
+      display: flex;
+      max-width: 600px;
+      width: 100%;
+      
+      
+      input{
+        border: none; 
+        border-bottom-right-radius:0;
+        border-bottom-left-radius:0;
+        border-top-left-radius:6px;
+        border-bottom-left-radius:6px;
+        padding: 10px;
+        width: 100%;
+      }
+
+      .SubscribeButton{
+        border:none;
+        background:$softBlue;
+        color: white;
+        border-top-right-radius:6px;
+        border-bottom-right-radius:6px;
+        padding: 10px;
+      }
+    }
+  }
+
+  .FooterArea{
+    background: rgb(21,21,21);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    padding: 20px;
+
+    .copyright{ }
+    .author{ }
+  }
+}
+
+
+@media(max-width: 592px)
+{
+  .MainFooter{
+  .SubscribeArea{
+    padding: 20px;
+    background: $mainYellow;
+
+    .SubscribeText{
+      padding: 10px;
+      color: white;
+      font-size: 20px;
+      font-weight: 700;
+    }
+  }
+
+  
+}
+}
