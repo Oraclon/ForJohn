@@ -9,8 +9,8 @@ require('dotenv').config({  });
 const isProduction = process.env['NODE_ENV'] == 'development' ;
 
 const targetPath = isProduction
-   ? `./src/environments/environment.development.ts`
-   : `./src/environments/environment.ts`;
+   ? `./src/environments/environment.ts`
+   : `./src/environments/environment.development.ts`;
 
 // we have access to our environment variables
 // in the process.env object thanks to dotenv
