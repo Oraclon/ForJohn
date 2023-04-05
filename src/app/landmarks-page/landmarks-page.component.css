@@ -14,6 +14,7 @@
 @media (min-width: 2000px) {
   .container-fluid {
     padding: 0;
+    max-width: 1920px;
   }
   .main-flex {
     display: flex;
