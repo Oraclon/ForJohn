@@ -14,3 +14,6 @@
 {"level":"warn","message":"DeprecationWarning: The Parse Server option 'allowExpiredAuthDataToken' default will change to 'false' in a future version.","timestamp":"2023-04-05T13:34:05.498Z"}
 {"level":"warn","message":"DeprecationWarning: The Parse Server option 'allowClientClassCreation' default will change to 'false' in a future version.","timestamp":"2023-04-05T14:35:35.886Z"}
 {"level":"warn","message":"DeprecationWarning: The Parse Server option 'allowExpiredAuthDataToken' default will change to 'false' in a future version.","timestamp":"2023-04-05T14:35:35.889Z"}
+{"level":"warn","message":"DeprecationWarning: The Parse Server option 'allowClientClassCreation' default will change to 'false' in a future version.","timestamp":"2023-04-05T17:19:50.436Z"}
+{"level":"warn","message":"DeprecationWarning: The Parse Server option 'allowExpiredAuthDataToken' default will change to 'false' in a future version.","timestamp":"2023-04-05T17:19:50.439Z"}
+{"code":101,"level":"error","message":"Invalid username/password.","stack":"Error: Invalid username/password.\n    at /Users/angularnodedeveloper/ForJohn/node_modules/parse-server/lib/Routers/UsersRouter.js:118:17\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)","timestamp":"2023-04-05T17:32:24.263Z"}

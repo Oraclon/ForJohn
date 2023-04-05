@@ -1,20 +1,9 @@
-.red {
-  background: Red;
-}
-
-.yellow {
-  background: yellow;
-}
-
-.colsHeight {
-  height: 700px;
-}
-
 .form-image {
   position: relative;
   background-image: url("https://wallpaperaccess.com/full/222675.jpg");
   background-position: center;
   background-size: cover;
+  height: calc(100vh - 100px);
 }
 .form-image .form-image-mask {
   position: absolute;
@@ -22,6 +11,10 @@
   width: 100%;
   height: 100%;
   background: rgba(21, 21, 21, 0.4);
+}
+
+.container-fluid {
+  padding: 10px;
 }
 
 .form {
@@ -37,7 +30,26 @@
   background-size: cover;
   background-position: center;
 }
-.form button {
-  background: #dd2a5b;
+.form .myLogin {
+  background: #ff9a00;
+  width: 100%;
+  padding: 10px 20px;
   color: white;
+  border-radius: 6px;
+  box-shadow: 1px 1px 4px rgba(21, 21, 21, 0.4);
+  border: none;
+}
+.form .myLogin:disabled {
+  background: #d00;
+}
+
+@media (min-width: 2000px) {
+  .container-fluid {
+    padding: 0;
+  }
+  .main-flex {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+  }
 }/*# sourceMappingURL=auth.component.css.map */
