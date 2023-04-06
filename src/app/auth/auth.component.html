@@ -1,4 +1,4 @@
-<div class="container-fluid p-0" style="overflow: hidden;">
+<!-- <div class="container-fluid p-0" style="overflow: hidden;">
     <div class="row" style="padding: 30px 0 30px 40px;"> 
       <div class="col-md-6 d-none d-sm-block form-image colsHeight"
       style="border-radius: 12px; overflow: hidden;">
@@ -25,6 +25,31 @@
             <div *ngIf="ErrorMessage" class="alert alert-danger mt-3">{{ ErrorMessage }}</div>
           </form>
     </div>
+    </div>
+    </div>
+  </div> -->
+
+  <div class="AuthenticationForm">
+    <div class="FormBackground">
+      <div class="FormBackgroundMask"></div>
+      <div class="FormBody">
+        <img class="UserImage" src="https://m.media-amazon.com/images/M/MV5BNGJmMWEzOGQtMWZkNS00MGNiLTk5NGEtYzg1YzAyZTgzZTZmXkEyXkFqcGdeQXVyMTE1MTYxNDAw._V1_.jpg">
+        <div class="WelcomeMessage">Welcome back traveller.</div>
+        <form class="LoginForm" (ngSubmit)="onSubmit()" [formGroup]="LoginForm">
+          <input 
+          placeholder="Enter Username"
+          formControlName="username"
+          type="text" class="LoginInput mainShadow">
+          <input 
+          placeholder="Enter Password"
+          formControlName="password"
+          type="password" class="LoginInput mainShadow">
+          <button 
+          [disabled]="!LoginForm.valid"
+          class="LoginButton mainShadow" type="submit">Login</button>
+        </form>
+
+        <div *ngIf="ErrorMessage" class="ErrorMessage">{{ ErrorMessage }}</div>
     </div>
     </div>
   </div>
