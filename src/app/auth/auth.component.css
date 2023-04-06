@@ -1,55 +1,98 @@
-.form-image {
-  position: relative;
-  background-image: url("https://wallpaperaccess.com/full/222675.jpg");
-  background-position: center;
-  background-size: cover;
-  height: calc(100vh - 100px);
+.AuthenticationForm {
+  padding: 20px;
 }
-.form-image .form-image-mask {
+.AuthenticationForm .mainShadow {
+  box-shadow: 1px 1px 4px rgba(21, 21, 21, 0.4);
+}
+.AuthenticationForm .FormBackground {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 100px);
+  background: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("https://wallpaperaccess.com/full/222675.jpg");
+  background-size: cover;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 1px 1px 4px rgba(21, 21, 21, 0.4);
+}
+.AuthenticationForm .FormBackground .FormBackgroundMask {
   position: absolute;
-  left: 0;
   width: 100%;
   height: 100%;
   background: rgba(21, 21, 21, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-.container-fluid {
-  padding: 10px;
-}
-
-.form {
-  position: relative;
-  box-shadow: 1px 1px 8px rgba(21, 21, 21, 0.4);
-  border-radius: 12px;
-}
-.form .userImage {
-  width: 150px;
-  height: 150px;
+.AuthenticationForm .FormBackground .UserImage {
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  background-image: url("https://m.media-amazon.com/images/M/MV5BNGJmMWEzOGQtMWZkNS00MGNiLTk5NGEtYzg1YzAyZTgzZTZmXkEyXkFqcGdeQXVyMTE1MTYxNDAw._V1_.jpg");
-  background-size: cover;
-  background-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
-.form .myLogin {
-  background: #ff9a00;
-  width: 100%;
-  padding: 10px 20px;
-  color: white;
-  border-radius: 6px;
+.AuthenticationForm .FormBackground .WelcomeMessage {
+  font-size: 20px;
+  font-weight: 700;
+  padding: 20px 0;
+}
+.AuthenticationForm .FormBackground .FormBody {
+  width: calc(100vw - 70%);
+  height: calc(100vh - 200px);
+  background: white;
+  z-index: 99;
+  border-radius: 12px;
   box-shadow: 1px 1px 4px rgba(21, 21, 21, 0.4);
-  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
 }
-.form .myLogin:disabled {
+.AuthenticationForm .FormBackground .FormBody .LoginForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.AuthenticationForm .FormBackground .FormBody .LoginForm .LoginInput {
+  font-size: 18px;
+  padding: 10px;
+  border: 1px solid rgba(21, 21, 21, 0.2);
+  border-radius: 6px;
+}
+.AuthenticationForm .FormBackground .FormBody .LoginForm .LoginButton {
+  background: #ff9a00;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: 700;
+  width: 100%;
+  border-radius: 6px;
+}
+.AuthenticationForm .FormBackground .FormBody .LoginForm .LoginButton:disabled {
   background: #d00;
 }
+.AuthenticationForm .FormBackground .FormBody .ErrorMessage {
+  background: #d00;
+  color: white;
+  font-weight: 700;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  margin-top: 40px;
+  border-radius: 12px;
+}
 
-@media (min-width: 2000px) {
-  .container-fluid {
-    padding: 0;
-  }
-  .main-flex {
-    display: flex;
-    flex-wrap: wrap;
-    height: 100vh;
+@media (max-width: 592px) {
+  .AuthenticationForm .FormBackground .FormBody {
+    width: 100%;
+    height: 100%;
   }
 }/*# sourceMappingURL=auth.component.css.map */
