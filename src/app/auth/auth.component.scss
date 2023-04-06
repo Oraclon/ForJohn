@@ -2,66 +2,170 @@ $mainYellow: #ff9a00;
 $softBlue: #0097ff;
 $mainRed: #d00;
 
-  .form-image
-  {
-    position: relative;
-    background-image: url('https://wallpaperaccess.com/full/222675.jpg');
-    background-position: center;
-    background-size: cover;
 
-    height: calc(100vh - 100px);
+.AuthenticationForm{
+  padding: 20px;
+
+  .mainShadow{ box-shadow: 1px 1px 4px rgba(21,21,21,.4); }
   
-    .form-image-mask
-    {
+  .FormBackground{
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 100px);
+    background: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('https://wallpaperaccess.com/full/222675.jpg');
+    background-size: cover;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 1px 1px 4px rgba(21,21,21,.4);
+
+    .FormBackgroundMask{
       position: absolute;
-      left:0;
       width: 100%; height: 100%;
       background: rgba(21,21,21,.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-  }
 
-  
-
-  .container-fluid{
-    padding: 10px;
-  }
-  
-  .form{
-    position: relative;
-    box-shadow: 1px 1px 8px rgba(21,21,21,.4);
-    border-radius: 12px;
-    
-    .userImage
-    {
-      width: 150px; height: 150px;
+    .UserImage{
+      width: 120px; height:120px;
       border-radius: 50%;
-      background-image: url('https://m.media-amazon.com/images/M/MV5BNGJmMWEzOGQtMWZkNS00MGNiLTk5NGEtYzg1YzAyZTgzZTZmXkEyXkFqcGdeQXVyMTE1MTYxNDAw._V1_.jpg');
-      background-size: cover;
-      background-position: center;
+      object-fit: cover;
+      object-position: center;
     }
-    .myLogin{
-      background: $mainYellow;
-      width: 100%;
-      padding: 10px 20px;
-      color: white;
-      border-radius: 6px;
+
+    .WelcomeMessage{
+      font-size: 20px;
+      font-weight: 700;
+      padding: 20px 0;
+    }
+
+    .FormBody{
+      width: calc(100vw - 70%);
+      height: calc(100vh - 200px);
+      background: white;
+      z-index: 99;
+      border-radius: 12px;
       box-shadow: 1px 1px 4px rgba(21,21,21,.4);
-      border:none;
-      &:disabled{
-        background: $mainRed;
+      display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+
+      .LoginForm{
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        .LoginInput{
+          font-size: 18px;
+          padding: 10px;
+          border:1px solid rgba(21,21,21,.2);
+          border-radius: 6px;
+        }
+
+        .LoginButton{
+          background: $mainYellow;
+          color: white;
+          border: none;
+          padding: 10px 20px;
+          font-weight: 700;
+          width: 100%;
+          border-radius: 6px;
+          &:disabled{
+            background: $mainRed;
+          }
+        }
       }
+
+      .ErrorMessage{
+        background:$mainRed;
+        color: white;
+        font-weight: 700;
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+        margin-top: 40px;
+        border-radius: 12px;
+      }
+      
     }
   }
-
-  @media (min-width: 2000px)
-{
-    .container-fluid{
-        padding: 0;
-        // height: 100%;
-    }
-    .main-flex{
-        display: flex;
-        flex-wrap: wrap;
-        height: 100vh;
-    }
 }
+
+@media (max-width: 592px){
+  .AuthenticationForm .FormBackground .FormBody{
+    width: 100%; height: 100%;
+  }
+}
+//   .form-image
+//   {
+//     position: relative;
+//     background-image: url('https://wallpaperaccess.com/full/222675.jpg');
+//     background-position: center;
+//     background-size: cover;
+
+//     height: calc(100vh - 100px);
+  
+//     .form-image-mask
+//     {
+//       position: absolute;
+//       left:0;
+//       width: 100%; height: 100%;
+//       background: rgba(21,21,21,.4);
+//     }
+//   }
+
+  
+
+//   .container-fluid{
+//     padding: 10px;
+//   }
+  
+//   .form{
+//     position: relative;
+//     box-shadow: 1px 1px 8px rgba(21,21,21,.4);
+//     border-radius: 12px;
+    
+//     .userImage
+//     {
+//       width: 150px; height: 150px;
+//       border-radius: 50%;
+//       background-image: url('https://m.media-amazon.com/images/M/MV5BNGJmMWEzOGQtMWZkNS00MGNiLTk5NGEtYzg1YzAyZTgzZTZmXkEyXkFqcGdeQXVyMTE1MTYxNDAw._V1_.jpg');
+//       background-size: cover;
+//       background-position: center;
+//     }
+//     .myLogin{
+//       background: $mainYellow;
+//       width: 100%;
+//       padding: 10px 20px;
+//       color: white;
+//       border-radius: 6px;
+//       box-shadow: 1px 1px 4px rgba(21,21,21,.4);
+//       border:none;
+//       &:disabled{
+//         background: $mainRed;
+//       }
+//     }
+//   }
+
+//   @media (min-width: 2000px)
+// {
+//     .container-fluid{
+//         padding: 0;
+//         // height: 100%;
+//     }
+//     .main-flex{
+//         display: flex;
+//         flex-wrap: wrap;
+//         height: 100vh;
+//     }
+// }
